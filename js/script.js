@@ -1,5 +1,6 @@
-var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput, buttonRock, buttonPaper, buttonScissors;
-
+var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput, buttonRock, buttonPaper, buttonScissors, playerScore, computerScore;
+playerScore = 0;
+computerScore = 0;
 
 function getMoveName(argMoveId) {
   console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
@@ -23,18 +24,27 @@ function displayResult(argPlayerMove, argComputerMove) {
   console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
     if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
         printMessage('Wygrywasz!');
+        playerScore++;
+        printMessage('Twój wynik to: ' + playerScore + ' a komputera: ' + computerScore);
     }
     else if (argPlayerMove == 'kamien' && argComputerMove == 'nożyce') {
         printMessage('Wygrywasz!');
+        playerScore++;
+        printMessage('Twój wynik to: ' + playerScore + ' a komputera: ' + computerScore);
     }
     else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
         printMessage('Wygrywasz!');
+        playerScore++;
+        printMessage('Twój wynik to: ' + playerScore + ' a komputera: ' + computerScore);
     }
     else if (argPlayerMove == argComputerMove) {
         printMessage('Remis!');
+        printMessage('Twój wynik to: ' + playerScore + ' a komputera: ' + computerScore);
     }
     else {
         printMessage('Przegrywasz :(');
+        computerScore++;
+        printMessage('Twój wynik to: ' + playerScore + ' a komputera: ' + computerScore);
     }
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 }
