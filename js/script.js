@@ -1,17 +1,5 @@
-let argMoveId,
-  argPlayerMove,
-  argComputerMove,
-  computerMove,
-  playerMove,
-  randomNumber,
-  playerInput,
-  buttonRock,
-  buttonPaper,
-  buttonScissors,
-  playerScore,
-  computerScore;
-playerScore = 0;
-computerScore = 0;
+let playerScore = 0;
+let computerScore = 0;
 
 function getMoveName(argMoveId) {
   console.log("wywołano funkcję getMoveName z argumentem: " + argMoveId);
@@ -71,23 +59,23 @@ function displayResult(argPlayerMove, argComputerMove) {
 function buttonClicked(argButtonName) {
   clearMessages();
   console.log(argButtonName + " został kliknięty");
-  playerMove = argButtonName;
+  const playerMove = argButtonName;
   console.log("ruch gracza to: " + playerMove);
-  randomNumber = Math.floor(Math.random() * 3 + 1);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
   console.log("wylosowana liczba to: " + randomNumber);
-  computerMove = getMoveName(randomNumber);
+  const computerMove = getMoveName(randomNumber);
   console.log("ruch komputera to: " + computerMove);
   displayResult(playerMove, computerMove);
 }
-buttonRock = document.getElementById("button-rock");
+let buttonRock = document.getElementById("button-rock");
 buttonRock.addEventListener("click", function () {
   buttonClicked("kamień");
 });
-buttonPaper = document.getElementById("button-paper");
+let buttonPaper = document.getElementById("button-paper");
 buttonPaper.addEventListener("click", function () {
   buttonClicked("papier");
 });
-buttonScissors = document.getElementById("button-scissors");
+let buttonScissors = document.getElementById("button-scissors");
 buttonScissors.addEventListener("click", function () {
   buttonClicked("nożyce");
 });
